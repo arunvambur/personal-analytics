@@ -1,0 +1,21 @@
+Match Id : 8505116011,,,,,,,,,,
+Statement Name : Statement of Accounts for funds,,,,,,,,,,
+Period : 01-Apr-2025 to 30-Jun-2025,,,,,,,,,,
+Transaction done on exchange : NSE/BSE/MCX ,,,,,,,,,,
+Statement of Account reflecting Clear Balance as on 30-Jun-2025.,,,,,,,,,,
+Exchange Segment,Transaction Date,Settlement Date,Settlement No,Bill / Cheque No,Transaction Type,Particulars,Voucher No,Debit,Credit,      Balance
+NSE-CAPITAL,,16-JUN-25,,,,OPENING BALANCE,,,,0.00
+NSE-CAPITAL,11/04/2025,15-APR-25,2025070,,BILL  ,SETTNO=2025070NSECMMBILL POSTED,202500000034,0.00,"368,358.15","368,358.15 CR"
+NSE-CAPITAL,12/04/2025,12-APR-25,,,DBNOTE,Being GST on NSDL - CDSL Charges - DCR012512042958,202501337959,3.60,0.00,"368,354.55 CR"
+NSE-CAPITAL,12/04/2025,12-APR-25,,,DBNOTE,NSDL- CDSL Charges Recoverable01251204295813984   ,202501342795,40.00,0.00,"368,314.55 CR"
+NSE-CAPITAL,12/04/2025,12-APR-25,,,DBNOTE,Being GST on NSDL - CDSL Charges - DCR012512042958,202501389501,3.60,0.00,"368,310.95 CR"
+NSE-CAPITAL,15/04/2025,15-APR-25,,1141631,PAYBNK,Being Payout towards NSE M 2025070,202500706512,"368,310.95",0.00,0.00
+NSE-CAPITAL,15/04/2025,15-APR-25,,,JE    ,Being payout of EQ settlement 2025070 adjusted aga,202502801954,47.20,0.00,47.20 DR
+NSE-CAPITAL,15/04/2025,15-APR-25,,,JE    ,Being payout of EQ settlement 2025070 adjusted aga,202502863273,0.00,47.20,0.00
+NSE-CAPITAL,30/06/2025,15-APR-25,,,,CLOSING BALANCE,,,,0.00
+,,,,,,,,,,
+,,,,,,,Total :,"368,405.35","368,405.35",
+,,,,,,,,,Net Balance : ,0.00
+Pending Obligations / Uncleared cheques as on 30-Jun-2025 :,,,,,,,,,,
+Exchange Segment,Transaction Date,Settlement Date,Settlement No,Bill / Cheque No,Transaction Type,Particulars,Voucher No,    Debit,Credit,      Balance
+No transactions to display.,,,,,,,,,,
