@@ -1,0 +1,4 @@
+file_name,contract_note_no,trade_date,settlement_no,settlement_date,exchange,segment,security_name,ISIN,side,quantity,gross_rate,gross_total,brokerage_per_unit,total_brokerage,net_rate,net_total_amount,stt,exchange_txn_charges,sebi_turnover_fee,additional_cess,stamp_duty,other_charges_total,net_amount_payable
+Contract_Note_33962669_01_01_2016_15_12_2025.pdf,,,2020062,2020-03-31,NSE,EQ,BOSCH LIMITED,,B,2,10050.0000,20100.0000,30.1500,60.3000,10080.1500,-20160.30,20.0,,,,,0.0,20160.3
+Contract_Note_35242709_01_01_2016_15_12_2025.pdf,,,2020109,2020-06-12,NSE,EQ,HDFC BANK LIMITED,,B,10,990.0000,9900.0000,2.9700,29.7000,992.9700,-9929.70,10.0,,,,,0.0,9929.7
+Contract_Note_35765543_01_01_2016_15_12_2025.pdf,,,2020127,2020-07-08,NSE,EQ,ITC LIMITED,,B,50,200.0000,10000.0000,0.6000,30.0000,200.6000,-10030.00,10.0,,,,,0.0,10030.0
