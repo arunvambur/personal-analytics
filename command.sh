@@ -17,3 +17,5 @@ python src/extract_equity_iifl.py --input-folder data/arun/equity/iifl/contract-
 python src/extract_equity_icici.py --input-folder data/kurinji/equity/icici/tr-statements --output-csv out/kurinji/equity-icici.csv
 
 python src/extract_equity_geojit.py --input-folder data/kurinji/equity/geojit/contract-notes --output-csv out/kurinji/equity_geojit.py
+
+python src/normalize/normalize_pf.py --input-files out/arun/pf.csv out/kurinji/pf.csv --output-csv data/normalized/pf.csv
