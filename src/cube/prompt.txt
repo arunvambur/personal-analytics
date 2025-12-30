@@ -1,0 +1,68 @@
+Wrtie a cubing process to combine 'Equity' and 'Equity Dividend' from the attached excel sheet such that
+
+Metrics: sum(Dividend Amount), year(Date)
+Dimensions: People, ISIN, year(Date)
+Projection: Equity(ISIN, Company), Equity Dividend(People, year(Date)) 
+
+Export this to a csv file 'income.csv' with additional column named 'Income Source' = "Equity Dividend"
+
+
+
+Add a new feature to the existing script such that read data from "Mutual Fund Dividend"
+cube the mutual fund dividend as follows
+
+Metrics: sum(Gross Amount), year(Record Date)
+Dimensions: Person 	AMC Name	Scheme Name year(Record Date)
+Projection: Person 	AMC Name	Scheme Name year(Record Date)
+
+export this to a csv file 'mf-dividend-income.csv'
+
+
+Add a new feature to the existing script that read data from "LIC"__future__
+Metrics: sum(Benefit Amount), Year(Premium Due Date)
+Dimensions: Person, Policy No, Year(Premium Due Date)
+Projection: Person, Policy No, Year(Premium Due Date)
+
+Create a new field Source = "LIC"
+
+Export to csv file "lic-income.csv"
+
+
+Add a new feature to the existing script that read the data from 'Providend Fund'
+Metrics: sum(EPF Employee),	sum(EPF Employer),	sum(Pension), sum(EPF Employee + EPF Employer) as Total Interest, year(Date)
+Dimensions: Person, UAN, Establishment Name, year(Date)
+Projection: Person, UAN, Establishment Name, year(Date)
+Fileter: Transaction Type = 'Interest'
+
+Add a new field Source = "Providend Fund"
+
+Export to csv file "providend-fund-income.csv"
+
+
+Add new column 'Income Type' for all four and categorize as follows,
+Equity, mf -> Spendable
+lic, providendfund -> Blocked
+
+
+Build a cube to the exisitng script that read the data from 'SSY'
+Metrics: sum(Amount), year(Date)
+Dimensions/Projections: Person, year(date)
+Filter: Type = "Interest"
+Add column: Source = "SSY", Income Type = "Blocked" 
+
+
+Create an income Summary 
+Metric: sum(Amount) as income
+Dimensions/Projection: Income Source, Income Type, year
+
+Export to csv file "income-summary.csv"
+
+
+Build a cube to the existing script that read the data from 'Bond'
+
+Metric: sum(Amount), year(Date)
+Dimensions/Projection: Person, Account, Scheme, year(date)
+filter: Type = 'Interest'
+Add column: Source = "Bond", Income Type = "Spendable" 
+
+Export to csv file 'bond-income.csv'
