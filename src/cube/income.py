@@ -528,6 +528,6 @@ def main() -> None:
 
     print("\nIncome Summary preview:")
     print(summary_df.head(10).to_string(index=False))
-
+    
 if __name__ == "__main__":
     main()
