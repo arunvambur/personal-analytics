@@ -1,0 +1,22 @@
+Attached is my equity historical price data details. The file name is an ISIN-company name. 
+The whole folder contains a similar kind of file structure. 
+I want to write a Python programme so that it will get all the details in a single Python data frame and also aggregated by year and by month, with averaging the price.
+
+
+Attached is the MDM file. Get the data equity and equity transaction. Join both the tables as shown below. 
+
+df_eq = 
+Metric: year(Trade Date), month(Trade Date)
+Projection : Equity (ISIN	Company	NSE Symbol	BSE Code), Equity Transaction(Person	Account	Trade Date	Segment	Action	Quantity	Price/Share	Net Amount)
+join condition: ISIN
+
+Join the df_eq with the aggregated equity monthly average(df_eq_mth) which calculated above
+such that
+
+Metric: Quantity * Price/Share as Invested Amt, Quantity * avg_close as Current Amt, 
+Projection: ISIN	Company NSE Symbol, Person	Account	Trade Date, Segment, Action, Quantity, Price/Share Net Amount, year,month, avg_close
+Where df_eq_mth.year = df_eq.year and df_eq_mth.month >=  df_eq.month
+
+
+
+

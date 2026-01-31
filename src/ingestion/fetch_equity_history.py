@@ -60,26 +60,45 @@ def existing_trade_dates(file_path):
 
 
 def fetch_breeze_daily(symbol, start_date):
-    from_date = start_date.strftime("%Y-%m-%dT09:15:00")
-    to_date = (pd.Timestamp.today() + timedelta(days=1)).strftime(
-        "%Y-%m-%dT09:15:00"
+    all_dfs = []
+
+    start_date = pd.to_datetime(start_date)
+    today = pd.Timestamp.today()
+
+    # Iterate year by year
+    for year in range(start_date.year, today.year + 1):
+        year_start = max(start_date, pd.Timestamp(year=year, month=1, day=1))
+        year_end = min(today, pd.Timestamp(year=year, month=12, day=31))
+
+        from_date = year_start.strftime("%Y-%m-%dT09:15:00")
+        to_date = (year_end + timedelta(days=1)).strftime("%Y-%m-%dT09:15:00")
+
+        resp = breeze.get_historical_data_v2(
+            interval=INTERVAL,
+            from_date=from_date,
+            to_date=to_date,
+            stock_code=symbol,
+            exchange_code="NSE",
+            product_type="cash"
+        )
+
+        if resp.get("Status") == 200 and resp.get("Success"):
+            df = pd.DataFrame(resp["Success"])
+            df["datetime"] = pd.to_datetime(df["datetime"])
+            all_dfs.append(df)
+
+    if not all_dfs:
+        return pd.DataFrame()
+
+    # Combine all years
+    final_df = (
+        pd.concat(all_dfs, ignore_index=True)
+        .drop_duplicates(subset=["datetime"])
+        .sort_values("datetime")
+        .reset_index(drop=True)
     )
 
-    resp = breeze.get_historical_data_v2(
-        interval=INTERVAL,
-        from_date=from_date,
-        to_date=to_date,
-        stock_code=symbol,
-        exchange_code="NSE",
-        product_type="cash"
-    )
-
-    if resp.get("Status") == 200 and resp.get("Success"):
-        df = pd.DataFrame(resp["Success"])
-        df["datetime"] = pd.to_datetime(df["datetime"])
-        return df
-
-    return pd.DataFrame()
+    return final_df
 
 os.makedirs(OUT_DIR, exist_ok=True)
 
